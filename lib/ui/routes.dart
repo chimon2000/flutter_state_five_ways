@@ -23,7 +23,6 @@ class Routes {
     });
 
     for (MapEntry<String, Handler> e in routeHandlers.entries) {
-      print(e.key);
       FluroRouter.appRouter.define(e.key,
           handler: e.value, transitionType: TransitionType.material);
     }
