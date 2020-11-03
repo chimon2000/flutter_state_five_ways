@@ -19,7 +19,7 @@ class Routes {
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       print("ROUTE WAS NOT FOUND !!!");
 
-      return Scaffold(body: Center());
+      return Scaffold(body: SafeArea(child: Center()));
     });
 
     for (MapEntry<String, Handler> e in routeHandlers.entries) {

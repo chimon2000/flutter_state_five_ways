@@ -6,32 +6,33 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FlatButton(
-              onPressed: navigateTo(context, Routes.riverpod),
-              child: Text('riverpod example'.toUpperCase()),
-            ),
-            FlatButton(
-              onPressed: navigateTo(context, Routes.binder),
-              child: Text('binder example'.toUpperCase()),
-            ),
-            FlatButton(
-              onPressed: navigateTo(context, Routes.flutterCommand),
-              child: Text('flutter_command example'.toUpperCase()),
-            ),
-            FlatButton(
-              onPressed: navigateTo(context, Routes.mobx),
-              child: Text('MobX example'.toUpperCase()),
-            ),
-            FlatButton(
-              onPressed: navigateTo(context, Routes.bloc),
-              child: Text('Bloc example'.toUpperCase()),
-            )
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FlatButton(
+                onPressed: navigateTo(context, Routes.riverpod),
+                child: Text('riverpod example'.toUpperCase()),
+              ),
+              FlatButton(
+                onPressed: navigateTo(context, Routes.binder),
+                child: Text('binder example'.toUpperCase()),
+              ),
+              FlatButton(
+                onPressed: navigateTo(context, Routes.flutterCommand),
+                child: Text('flutter_command example'.toUpperCase()),
+              ),
+              FlatButton(
+                onPressed: navigateTo(context, Routes.mobx),
+                child: Text('MobX example'.toUpperCase()),
+              ),
+              FlatButton(
+                onPressed: navigateTo(context, Routes.bloc),
+                child: Text('Bloc example'.toUpperCase()),
+              )
+            ],
+          ),
         ),
       ),
     );
