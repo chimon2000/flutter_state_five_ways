@@ -1,14 +1,15 @@
 import 'package:binder/binder.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_state_five_ways/ui/pages/pages.dart';
+import 'package:flutter_state_five_ways/ui/routes.dart';
 
 void main() {
+  Routes.configureRoutes();
   runApp(BinderScope(child: App()));
 }
 
 class App extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
@@ -18,7 +19,7 @@ class App extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: MobxPage(),
+        onGenerateRoute: FluroRouter.appRouter.generator,
       ),
     );
   }
