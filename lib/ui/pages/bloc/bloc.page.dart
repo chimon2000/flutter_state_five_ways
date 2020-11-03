@@ -30,38 +30,35 @@ class _BlocPageState extends State<BlocPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => NotesCubit(),
-      child: Scaffold(
-        appBar: AppBar(title: Text('My notes app')),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              FlatButton(
-                  onPressed: () {
-                    context.bloc<NotesCubit>().addNote();
-                    _controller.clear();
-                  },
-                  child: Text('Create Note')),
-              TextField(
-                controller: _controller,
-                onChanged: (value) =>
-                    context.bloc<NotesCubit>().updateInput(value),
-                decoration: InputDecoration.collapsed(hintText: 'Add a note'),
-              ),
-              Divider(),
-              BlocBuilder(
-                builder: (context, state) => Expanded(
-                  child: ListView.builder(
-                    itemBuilder: (context, index) =>
-                        Note(text: state.notes[index]),
-                    itemCount: state.notes.length,
-                  ),
+    return Scaffold(
+      appBar: AppBar(title: Text('My notes app: Bloc')),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            FlatButton(
+                onPressed: () {
+                  context.bloc<NotesCubit>().addNote();
+                  _controller.clear();
+                },
+                child: Text('Create Note')),
+            TextField(
+              controller: _controller,
+              onChanged: (value) =>
+                  context.bloc<NotesCubit>().updateInput(value),
+              decoration: InputDecoration.collapsed(hintText: 'Add a note'),
+            ),
+            Divider(),
+            BlocBuilder<NotesCubit, NotesState>(
+              builder: (context, state) => Expanded(
+                child: ListView.builder(
+                  itemBuilder: (context, index) =>
+                      Note(text: state.notes[index]),
+                  itemCount: state.notes.length,
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
