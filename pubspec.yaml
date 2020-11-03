@@ -27,6 +27,7 @@ dependencies:
   bloc: ^6.1.0
   cupertino_icons: ^1.0.0
   equatable: ^1.2.5
+  fluro: ^1.7.7
   flutter_bloc: ^6.0.6
   flutter_command: ^0.9.3
   flutter_mobx: ^1.1.0+2
