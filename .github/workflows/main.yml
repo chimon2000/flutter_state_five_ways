@@ -1,4 +1,4 @@
-name: deploy
+name: test
 
 on:
   push:
@@ -13,6 +13,4 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'beta'
-      - uses: erickzanardo/flutter-gh-pages@v2
-        with:
-          useCanvasKit: true
+      - run: flutter test
