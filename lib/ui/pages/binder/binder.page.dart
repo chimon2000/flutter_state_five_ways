@@ -33,7 +33,7 @@ class _BinderPageState extends State<BinderPage> {
     final state = context.watch(notesRef);
 
     return Scaffold(
-      appBar: AppBar(title: Text('My notes app')),
+      appBar: AppBar(title: Text('My notes app: binder')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

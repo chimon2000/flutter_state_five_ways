@@ -31,7 +31,7 @@ class _RiverpodPageState extends State<RiverpodPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My notes app')),
+      appBar: AppBar(title: Text('My notes app: riverpod')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

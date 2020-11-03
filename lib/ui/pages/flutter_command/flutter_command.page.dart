@@ -31,7 +31,7 @@ class _FlutterCommandPageState extends State<FlutterCommandPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My notes app')),
+      appBar: AppBar(title: Text('My notes app: flutter command')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

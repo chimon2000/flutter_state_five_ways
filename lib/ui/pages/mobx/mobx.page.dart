@@ -30,7 +30,7 @@ class _MobxPageState extends State<MobxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My notes app')),
+      appBar: AppBar(title: Text('My notes app: MobX')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
